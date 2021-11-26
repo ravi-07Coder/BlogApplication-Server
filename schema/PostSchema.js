@@ -17,7 +17,7 @@ const PostSchema=mongoose.Schema({
         type:String,
         required:true
     },
-    Categories:
+    categories:
     {
         type:String,
         required:true
@@ -32,5 +32,5 @@ const PostSchema=mongoose.Schema({
     }
 
 })
-const post=moongoose.model('post',PostSchema)
-export default post;
+const Post=mongoose.model('Post',PostSchema)
+export default Post;

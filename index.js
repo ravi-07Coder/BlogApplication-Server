@@ -9,8 +9,8 @@ const app=express();
 app.use(cors())
 app.use(bodyParser.json({extended:true}))
 app.use(bodyParser.urlencoded({extended:true}))
-
-
+//package-lock-jsn acts as a information provider for package-json depndencies
+//for creating the api  we have to use the module router
 app.use('/',router)
 
 
