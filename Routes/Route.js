@@ -51,7 +51,7 @@ router.post("/login", (req, res)=> {
     User.findOne({ email: email}, (err, user) => {
         if(user){
             if(password === user.password ) {
-                res.send({user: {email: email, name: user.name}, token: user._id + user._id});
+                res.send({user:{email:email,name:user.name},token:user._id+user._id})
             } else {
                 res.send({ message: "Password didn't match"})
             }
@@ -60,8 +60,9 @@ router.post("/login", (req, res)=> {
         }
     })
 }) 
+
 router.post("/register", (req, res)=> {
-    const { name, email, password} = req.body;
+    const { name, email, password} = req.body
     User.findOne({email: email}, (err, user) => {
         if(user){
             res.send({message: "User already registerd"})
@@ -75,14 +76,13 @@ router.post("/register", (req, res)=> {
                 if(err) {
                     res.send(err)
                 } else {
-                    res.send({user: {email: email, name: name, password: password}, token: user._id + user._id});
+                    res.send( { user:{email:email,name:name,password:password},token:user._id+user._id })
                 }
             })
         }
     })
     
 })
-
 
 
 export default router;

@@ -37,6 +37,7 @@ export const getAllPosts = async (request, response) => {
 
 //_id:request.params.id
 export const getPost = async (request, response) => {
+      console.log(request.body)
       try {
             let post = await Post.findById(request.params.id)
             response.status(200).json(post);
