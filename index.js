@@ -1,3 +1,7 @@
+if(process.env.NODE_ENV !== "production") {
+     require('dotenv').config();
+ } 
+
 import express, { Router }  from "express";
 import Connection from "./database/db.js";
 import router from "./Routes/Route.js";
@@ -11,14 +15,14 @@ app.use(bodyParser.json({extended:true}))
 app.use(bodyParser.urlencoded({extended:true}))
 //package-lock-jsn acts as a information provider for package-json depndencies
 //for creating the api  we have to use the module router
-app.use('/',router)
+app.use('/',router);
+app.get("/", (req, res) => {
+     res.status(200).json("BLOG APPLICATION");
+})
 
-
-
-const PORT=8000;
-app.listen(PORT,  ()=>{
-     
-     console.log(`server is running successfully on port ${PORT}`)
+const port = process.env.PORT || 8000;
+app.listen(port, "0.0.0.0", ()=>{   
+     console.log(`server is running successfully on port ${port}`)
 })
 
 Connection();
