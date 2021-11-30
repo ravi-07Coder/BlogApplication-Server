@@ -20,9 +20,9 @@ app.get("/", (req, res) => {
      res.status(200).json("BLOG APPLICATION");
 })
 
-const PORT = process.env.PORT | 8000;
-app.listen(PORT, "0.0.0.0", ()=>{   
-     console.log(`server is running successfully on port ${PORT}`)
+const port = process.env.PORT || 8000;
+app.listen(port, "0.0.0.0", ()=>{   
+     console.log(`server is running successfully on port ${port}`)
 })
 
 Connection();
