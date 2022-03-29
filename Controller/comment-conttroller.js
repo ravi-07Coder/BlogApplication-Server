@@ -3,7 +3,7 @@ import Comment from "../schema/comment-schema.js"
 export const newComment=async(request,response)=>
 {
     try{
-         const comment= await new Comment(request.body);     
+          const comment= await new Comment(request.body);     
           comment.save();
           response.status(200).json('  all comment saves successfully ')
         }

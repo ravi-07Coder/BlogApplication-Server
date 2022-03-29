@@ -2,9 +2,9 @@
 import Post from "../schema/PostSchema.js"
 import User from "../schema/User.js";
 
-//post contrller is helping the data to be stored in mongodb atlas
-export const createPost = async (request, response) => {
-
+//post controller is helping the data to be stored in mongodb atlas
+export const createPost = async (request, response) => 
+{
       console.log(request.body)
       try {
             const post = await new Post(request.body);

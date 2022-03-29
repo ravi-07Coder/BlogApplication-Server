@@ -1,3 +1,6 @@
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+
 if(process.env.NODE_ENV !== "production") {
      require('dotenv').config();
  } 

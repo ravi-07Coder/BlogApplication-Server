@@ -16,7 +16,7 @@ const commentSchema=mongoose.Schema({
     },
     comments:{
         type:String,
-        requires:true
+        requires:true       
     },
 })
 
